@@ -1,0 +1,26 @@
+-couldn't take authorization token header from response
+    |->{ 
+        1//In successfulAuthentication method in JwtAuthenticationFilter class in the server add 
+        response.addHeader("Access-Control-Expose-Headers", "Authorization");
+        response.addHeader("Access-Control-Allow-Headers", "Authorization, X-PINGOTHER, Origin, X-Requested-With, Content-Type, Accept, X-Custom-header");
+        response.addHeader(HEADER_STRING, TOKEN_PREFIX + token); // HEADER_STRING == Authorization 
+        2//In the login service (angular)
+                loginRequest(): Observable<any> {
+            return this.http.post<any>(url + 'login', { username: 'admin', password: 'admin123' },
+            { observe: 'response' as 'body' })
+            .pipe(map(resp => {
+                console.log(resp);
+                return resp;
+            }));
+        }
+        3// In login Component
+                    login (test){
+                this.loginService.loginRequest().subscribe((
+                response: HttpResponse<any>) => { console.log(response.headers.get('Authorization'))});
+            }
+        }
+
+***********
+sudo fuser -k -n tcp 8000  (to kill a port)
+*********** 
+router paths should never end with '/'

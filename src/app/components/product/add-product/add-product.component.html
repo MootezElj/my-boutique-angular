@@ -1,0 +1,40 @@
+<div class="row justify-content-md-center" style="margin-top: 20px" *ngIf="isAdmin">
+    <div class="col-sm-8">
+        <h2 style="padding-left:20%;margin:60px">Add a product</h2>
+        <form>
+            <div class="form-group">
+                <label for="exampleInputEmail1">Name</label>
+                <input type="text" class="form-control" id="productName" aria-describedby="emailHelp"
+                    placeholder="Enter product's name">
+                <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone
+                    else.</small>
+            </div>
+            <div class="form-group">
+                <label for="exampleInputPassword1">Price</label>
+                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+            </div>
+            <div class="form-group">
+                <label for="exampleInputPassword1">Quantity</label>
+                <input type="number" class="form-control" id="exampleInputPassword1" placeholder="Password">
+            </div>
+            <div class="form-group">
+                <label for="exampleInputPassword1">Price</label>
+                <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Password">
+            </div>
+            <div class="form-group">
+                <label for="exampleInputPassword1">Sales Counter</label>
+                <input type="number" class="form-control" id="exampleInputPassword1" placeholder="Password">
+            </div>
+            <div class="form-group">
+                <label for="exampleInputPassword1">Status</label>
+                <select class="custom-select"  name="" id="">
+                    <option value="">opt1</option>
+                    <option value="">opt2</option>
+                    <option value="">opt3</option>
+                </select>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+
+</div>
